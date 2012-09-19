@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Location:</b>
+  <%= @accomodation.location %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @accomodation.name %>
+</p>
+
+<p>
+  <b>Size:</b>
+  <%= @accomodation.size %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @accomodation.type %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @accomodation.status %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @accomodation.notes %>
+</p>
+
+
+<%= link_to 'Edit', edit_accomodation_path(@accomodation) %> |
+<%= link_to 'Back', accomodations_path %>

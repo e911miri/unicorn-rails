@@ -1,0 +1,24 @@
+<div class="span2">
+	<ul class="nav nav-list"">
+		<% if admin_signed_in? %>
+		<li class="nav-header">Users Management</li>
+		<li><%= link_to "Manage Users", user_profiles_path %></li>
+		<li><%= link_to "Manage Administrators" %></li>
+		<li><%= link_to "Manage Students"  %></li>
+		<li><%= link_to "Manage Lecturers" %></li>
+		<li class="nav-header">Academic Management</li>
+		<li><%= link_to "Manage Departments", departments_path %></li>
+		<li><%= link_to "Manage Lecture Shedules", lectureschedules_path %></li>
+		<li><%= link_to "Manage Courses", courses_path %></li>
+		<li class="nav-header">Community Management</li>
+		<li><%= link_to "Manage Adverts", adverts_path %></li>
+		<li><%= link_to "Manage Events", events_path %></li>
+		<li><%= link_to "Manage Groups", groups_path %></li>
+		<li><%= link_to "Manage News", news_index_path %></li>
+		<li class="nav-header">Communication Management</li>
+		<li><%= link_to "Manage Microposts", microposts_path %></li>
+		<li><%= link_to "Manage Messages", messages_path %></li>
+		<% elsif user_signed_in? %>
+		<% end %>
+	</ul>
+</div>

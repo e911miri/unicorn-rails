@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  course_id: 1
+  material_path: MyString
+  title: MyString
+  type: 
+  notes: MyString
+
+two:
+  course_id: 1
+  material_path: MyString
+  title: MyString
+  type: 
+  notes: MyString

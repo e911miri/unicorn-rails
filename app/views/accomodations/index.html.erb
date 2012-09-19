@@ -1,0 +1,33 @@
+<h1>Listing accomodations</h1>
+
+<table>
+  <tr>
+    <th>Location</th>
+    <th>Name</th>
+    <th>Size</th>
+    <th>Type</th>
+    <th>Status</th>
+    <th>Notes</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @accomodations.each do |accomodation| %>
+  <tr>
+    <td><%= accomodation.location %></td>
+    <td><%= accomodation.name %></td>
+    <td><%= accomodation.size %></td>
+    <td><%= accomodation.type %></td>
+    <td><%= accomodation.status %></td>
+    <td><%= accomodation.notes %></td>
+    <td><%= link_to 'Show', accomodation %></td>
+    <td><%= link_to 'Edit', edit_accomodation_path(accomodation) %></td>
+    <td><%= link_to 'Destroy', accomodation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Accomodation', new_accomodation_path %>

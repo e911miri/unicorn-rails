@@ -1,0 +1,35 @@
+<h1>Listing departments</h1>
+
+<table class="table table-stripped">
+  <tr>
+    <th>Name</th>
+    <th>School</th>
+    <th>Hod</th>
+    <th>Location</th>
+    <th>Description</th>
+    <th>Notes</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @departments.each do |department| %>
+  <tr>
+    <td><%= department.name %></td>
+    <td><%= department.school %></td>
+    <td><%= department.hod %></td>
+    <td><%= department.location %></td>
+    <td><%= department.description %></td>
+    <td><%= department.notes %></td>
+    <td><%= link_to 'Show', department %></td>
+    <td><%= link_to 'Edit', edit_department_path(department) %></td>
+    <td><%= link_to 'Destroy', department, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Courses', courses_departments_path(:id=>department) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Department', new_department_path, :class=>"btn" %>

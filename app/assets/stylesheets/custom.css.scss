@@ -1,0 +1,22 @@
+@import "bootstrap";
+@import "bootstrap-responsive";
+body{ 
+  padding-top: 50px;
+  background-image: url('mbg.jpg');
+}
+.adminpanel{
+  
+}
+.well{
+  input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  padding: 10px;
+  height: auto;
+  margin-bottom: 15px;
+  }
+}
+
+footer{
+}
+

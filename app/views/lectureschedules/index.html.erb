@@ -1,0 +1,33 @@
+<h1>Listing lectureschedules</h1>
+
+<table>
+  <tr>
+    <th>Course</th>
+    <th>Timefrom</th>
+    <th>Timeto</th>
+    <th>Day</th>
+    <th>Venue</th>
+    <th>Notes</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @lectureschedules.each do |lectureschedule| %>
+  <tr>
+    <td><%= lectureschedule.course_id %></td>
+    <td><%= lectureschedule.timefrom %></td>
+    <td><%= lectureschedule.timeto %></td>
+    <td><%= lectureschedule.day %></td>
+    <td><%= lectureschedule.venue %></td>
+    <td><%= lectureschedule.notes %></td>
+    <td><%= link_to 'Show', lectureschedule %></td>
+    <td><%= link_to 'Edit', edit_lectureschedule_path(lectureschedule) %></td>
+    <td><%= link_to 'Destroy', lectureschedule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Lectureschedule', new_lectureschedule_path %>

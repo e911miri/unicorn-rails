@@ -1,0 +1,2 @@
+module LectureschedulesHelper
+end

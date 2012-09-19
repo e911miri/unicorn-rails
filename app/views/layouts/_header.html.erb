@@ -1,0 +1,31 @@
+<div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <%= link_to "Unicorn", root_path, :class=>"brand" %>
+          <div class="nav-collapse collapse">
+          	<p class="navbar-text pull-right">
+          	<% if user_signed_in? %>          	
+              <%= link_to current_user.email,edit_user_registration_path, :class=> "navbar-link" %>
+            <% else %>
+              <%= link_to "sign in", new_user_registration_path,  :class=>"navbar-link" %>            
+          	<% end %>
+            </p>
+            <p class="navbar-divider pull-right "> | </p>
+            <p class="navbar-text pull-right"><%= link_to "admin", admin_path %></p>
+            <ul class="nav">
+            	<% if user_signed_in? %>
+            	<li><% link_to "Messages", student_messages_path(current_user) %></li>
+	            <% end %>
+              <li class="active"><%= link_to "Home", root_path %></li>
+              <li><%= link_to "About", about_path %></li>
+              <li><%= link_to "Contact", contact_path %></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>

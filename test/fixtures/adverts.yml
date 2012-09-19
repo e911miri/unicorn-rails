@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  duration: 1
+  audience: MyString
+  messgae: MyString
+  url: MyString
+  notes: MyString
+  user_id: MyString
+
+two:
+  duration: 1
+  audience: MyString
+  messgae: MyString
+  url: MyString
+  notes: MyString
+  user_id: MyString
