@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "1.9.3-p125"
+ruby "1.9.3"
 gem 'rails'
 gem 'bootstrap-sass'
 gem 'devise'
@@ -11,8 +11,10 @@ gem 'haml-rails'
 # gem 'bootstrap-paginate'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-group :development
+group :development do
   gem 'sqlite3'
+end
+  
 group :production do
   gem 'pg'
 end
