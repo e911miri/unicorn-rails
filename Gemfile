@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "1.9.3"
+ruby "1.9.3-p125"
 gem 'rails'
 gem 'bootstrap-sass'
 gem 'devise'
