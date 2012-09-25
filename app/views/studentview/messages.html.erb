@@ -1,0 +1,9 @@
+<% provide(:title, "Messages") %>
+<% provide(:header, "Unicorn Student") %>
+<ul data-role="listview" data-inset="true">
+	<% @messages.each do |message| %>
+	<li><a href="<%= message_path(message) %>">
+		<%= message.subject %>
+	</a></li>
+	<% end %>
+</ul>

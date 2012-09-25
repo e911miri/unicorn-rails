@@ -1,0 +1,20 @@
+<% provide(:title, "Events") %>
+<% provide(:header, "Unicorn Student") %>
+<ul data-role="listview" data-inset="true">
+	<li data-role="list-divider">Events</li>
+	<% @events.each do |event| %>
+	<li data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c">
+		<div class="ui-btn-inner ui-li">
+			<div class="ui-btn-text">
+				<a href="<%= events_studentview_index_path %>" class="ui-link-inherit">
+					<strong class="ui-li-aside ui-li-desc"><%= event.time %></strong>		
+					<h3 class="ui-li-heading"><%= event.name %></h3>
+					<p class="ui-li-desc"><strong><%= event.location %></strong></p>
+					<p class="ui-li-desc"><%= event.audience %></p>
+				</a>
+			</div>
+			<span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>
+		</div>
+	</li>
+	<% end %>
+</ul>

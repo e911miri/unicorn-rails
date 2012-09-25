@@ -7,6 +7,7 @@ gem 'ransack'
 gem "jquerymobile-rails"
 gem 'heroku'
 gem 'haml-rails'
+
 # gem 'will-paginate'
 # gem 'bootstrap-paginate'
 # Bundle edge Rails instead:
