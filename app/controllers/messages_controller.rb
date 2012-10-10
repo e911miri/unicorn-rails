@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
-  before_filter :authenticateadmin!
+  before_filter :authenticate_admin!
   layout "adminlayout"
   def index
     @messages = Message.all

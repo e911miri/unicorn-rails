@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120918101127) do
+ActiveRecord::Schema.define(:version => 20121002191033) do
 
   create_table "accomodations", :force => true do |t|
     t.string   "location"
@@ -108,6 +108,14 @@ ActiveRecord::Schema.define(:version => 20120918101127) do
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "lecturers", :force => true do |t|
+    t.string   "userprofile_id"
+    t.string   "department_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.string   "staff_no"
+  end
+
   create_table "lectureschedules", :force => true do |t|
     t.integer  "course_id"
     t.string   "timefrom"
@@ -127,6 +135,7 @@ ActiveRecord::Schema.define(:version => 20120918101127) do
     t.string   "status"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.string   "user_id"
   end
 
   create_table "microposts", :force => true do |t|
@@ -142,6 +151,30 @@ ActiveRecord::Schema.define(:version => 20120918101127) do
     t.string   "notes"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "notifications", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "students", :force => true do |t|
+    t.string   "name"
+    t.string   "matric_no"
+    t.integer  "department_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.integer  "user_profile_id"
+  end
+
+  create_table "subscriptions", :force => true do |t|
+    t.string   "resource"
+    t.integer  "resource_id"
+    t.string   "type"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "user_profiles", :force => true do |t|

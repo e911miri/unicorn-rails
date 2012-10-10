@@ -1,0 +1,34 @@
+- provide(:title, "Groups")
+- provide(:header, "Unicorn Student") 
+
+- if @groups
+  %div{:data=>{:role=>:navbar}}
+    %ul
+      %li= link_to "All groups", "#"  
+  %ul{:data=>{:role=>:listview, :inset=>:true, :filter=>:true}}
+    - @groups.each do |group|
+      %li
+        = link_to group.name, studentview_groups_path(:id=>group.id)
+  %ul{:data=>{:role=>:listview, :inset=>:true}}
+    %li
+      = link_to "Create New group", studentview_groups_path(:new=>true)
+- elsif new
+  = form_for @group, :url=> studentview_groups_path do |f|
+    = f.label :name, "name"
+    = f.text_field :name
+    = f.label :description
+    = f.text_field :description
+    = f.label :leader
+    = f.select :leader, options_for_select(@users.collect{|user| [user.email, user.id]})
+    = f.submit
+- elsif @group
+  %ul{:data=>{:role=>:listview, :inset=>:true}}
+    %li
+      Group Name:
+      =@group.name
+    %li
+      Group Description:
+      =@group.description
+    %li
+      Group Leader:
+      =user @group.leader

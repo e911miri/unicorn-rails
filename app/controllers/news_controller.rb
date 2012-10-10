@@ -1,7 +1,7 @@
 class NewsController < ApplicationController
   # GET /news
   # GET /news.json
-  before_filter :authenticateadmin!
+  before_filter :authenticate_admin!
   layout "adminlayout"
   def index
     @news = News.all

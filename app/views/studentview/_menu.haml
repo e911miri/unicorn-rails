@@ -1,6 +1,7 @@
 %ul{:data => {:role => :listview, :inset => :true}}
-  %li= link_to :Messages
-  %li= link_to "Users"
-  %li= link_to "Course Information"
-  %li= link_to "Events"
-  %li= link_to "News"
+  %li= link_to :Messages, studentview_messages_path
+  %li= link_to "Users", studentview_users_path
+  %li= link_to "Groups", studentview_groups_path
+  %li= link_to "Course Information", studentview_courses_path
+  %li= link_to "Events", studentview_events_path
+  %li= link_to "News", studentview_news_path

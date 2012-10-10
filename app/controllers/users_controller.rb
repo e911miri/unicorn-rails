@@ -1,8 +1,11 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!
   layout "layouts/studentlayout"
   def index
-    @user=User.all
-    @search=User.search[params[:id]]
+    @search=User.search(params[:q])
+    @users=@search.result
+  end
+  
+  def search
+    
   end
 end

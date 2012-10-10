@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Resource:
+  = @subscription.resource
+%p
+  %b Resource:
+  = @subscription.resource_id
+%p
+  %b Type:
+  = @subscription.type
+
+= link_to 'Edit', edit_subscription_path(@subscription)
+\|
+= link_to 'Back', subscriptions_path

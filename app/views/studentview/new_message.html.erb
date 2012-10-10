@@ -1,0 +1,21 @@
+<% provide(:title, "Users") %>
+<% provide(:header, "Compose Message|Unicorn Student") %>
+<%= form_for @message do |f| %>
+	<div class="field">
+		<%= f.label :recipient %>
+		<%= f.select :recipient_id, options_for_select(@users.collect{|u| [u.email, u.id]}) %>
+	</div>
+	<div class="field">
+		<%= f.label :subject %>
+		<%= f.text_field :subject %>
+	</div>
+	
+	<div class="field">
+		<%= f.label :body %>
+		<%= f.text_area :body %>
+	</div>
+	
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+<% end %>

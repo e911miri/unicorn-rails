@@ -1,8 +1,7 @@
 <% provide(:title, "Users") %>
-<% provide(:header, "Unicorn Student") %>
-<%= search_form_for(@search, :path=> users_studentview_index_path) do |f| %>
+<% provide(:header, "User Search | Unicorn Student") %>
+<%= search_form_for @search do |f| %>
 	<div class="field">
-		<%= f.label :email_cont, "Email Contains" %>
 		<%= f.text_field :email_cont %>
 	</div>
 	<div class="actions">
@@ -10,9 +9,9 @@
 	</div>
 <% end %>
 <ul data-role="listview" data-inset="true">
-	<% @messages.each do |message| %>
-	<li><a href="<%= message_path(message) %>">
-		<%= message.subject %>
+	<% @users.each do |user| %>
+	<li><a href="<%= user_path(user) %>">
+		<%= user.email %>
 	</a></li>
 	<% end %>
 </ul>

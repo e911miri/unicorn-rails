@@ -1,0 +1,10 @@
+%table.table.table-bordered.table-stripped
+  %caption
+    %h3 All Administrators in the System
+  %thead
+    %th Email
+  %tbody
+    - if @admins
+      - @admins.each do |admin|
+        %tr
+          %td= admin.email

@@ -1,7 +1,7 @@
 class LectureschedulesController < ApplicationController
   # GET /lectureschedules
   # GET /lectureschedules.json
-  before_filter :authenticateadmin!
+  before_filter :authenticate_admin!
   layout "adminlayout"
   def index
     @lectureschedules = Lectureschedule.all

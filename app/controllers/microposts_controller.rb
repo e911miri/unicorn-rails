@@ -1,7 +1,7 @@
 class MicropostsController < ApplicationController
   # GET /microposts
   # GET /microposts.json
-  before_filter :authenticateadmin!
+  before_filter :authenticate_admin!
   layout "adminlayout"
   def index
     @microposts = Micropost.all

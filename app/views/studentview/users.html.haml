@@ -1,0 +1,9 @@
+- provide(:title, "Users")
+- provide(:header, "Find Users | Unicorn Student") 
+%div{:data=>{:role=>:navbar}}
+  %ul
+    %li= link_to "All Users", "#"
+%ul{:data=>{:role=>:listview, :inset=>:true, :filter=>:true}}
+  - @users.each do |user|
+    %li
+      = link_to user.email, studentview_users_path(:id=>user.id)

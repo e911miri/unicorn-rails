@@ -1,0 +1,14 @@
+%table.table.table-bordered.table-stripped
+  %caption
+    %h3 All Users in the System
+  %thead
+    %th Registration Number
+    %th Name
+    %th Email
+  %tbody
+    - if @users
+      - @users.each do |user|
+        %tr
+          %td= user.username
+          %td= user
+          %td= user.email

@@ -1,0 +1,11 @@
+- provide(:title, "Home")
+- provide(:header, "Unicorn Student")
+%div{:data=>{:role=>:navbar}}
+  %ul
+    %li= link_to "Designed for the Federal University of Technology, Akure", "#"  
+%ul{:data=>{:role=>:listview, :inset=>:true}}
+  %li= link_to "Sign In", new_user_session_path, :rel=>:external
+  %li= link_to "Sign Up", new_user_registration_path, :rel=>:external
+  %li= link_to "Find Out More", "#"
+  %li= link_to "Contact the Developer", "#"
+  %li= link_to "About this project", "#"

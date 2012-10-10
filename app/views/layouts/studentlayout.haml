@@ -9,10 +9,28 @@
     = csrf_meta_tags
   %body
     %div{"data-role"=> "page", "data-theme"=> data_theme }
-      .header{"data-role"=> "header", "data-theme"=> data_theme }
+      %img{:src=>"/assets/unicorn-head.jpg"}
+      .header{"data-role"=> "header", "data-theme"=> data_theme }      
         %h1
           = yield :header
+        = link_to "Home", studentview_path, :data=>{:iconpos=>:notext, :icon=>:home, :direction=>:reverse}, :class=>"ui-btn-left jqm-home"
+        = link_to "Home", "#menu", :data=>{:iconpos=>:notext, :icon=>:gear}, :class=>"ui-btn-right jqm-home"
       .content{"data-role"=> "content", "data-theme"=> data_theme }
         = yield
       .footer{"data-role"=> "footer", "data-theme"=> data_theme }
-        %h1 Footer
+        - if user_signed_in?
+          %div{:data=>{:role=>:navbar}}
+            %ul
+              %li= link_to "Sign Out", destroy_session_path(current_user), method: "delete"
+              %li= link_to "Account", studentview_register_path(:update=>true)
+          %h1= current_user.email
+          %img{:src=>"/assets/unicorn-foot.jpg"}
+        - else
+          %h1 No User Signed In
+          %img{:src=>"/assets/unicorn-foot.jpg"}
+    %div{"data-role"=> "dialog", "data-theme"=> data_theme,"data-rel"=>"back", :id=>:menu }
+      .header
+        %h1 Unicorn Menu
+        = link_to "Close", :data=>{ :icon=>:close, :rel=>:back}, :class=>"ui-btn-right jqm-home"
+      .content{"data-role"=> "content", "data-theme"=> data_theme }
+        = render "studentview/menu"

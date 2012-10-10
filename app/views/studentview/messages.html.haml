@@ -1,0 +1,23 @@
+- provide(:title, "Users")
+- provide(:header, "Unicorn Student") 
+
+- if @messages
+  %div{:data=>{:role=>:navbar, :inset=>true}}
+    %ul
+      %li= link_to "All Messages", "#"  
+  %ul{:data=>{:role=>:listview, :inset=>:true, :filter=>:true}}
+    - @messages.each do |message|
+      %li
+        = link_to message.subject, studentview_messages_path(:id=>message.id)
+  %ul{:data=>{:role=>:listview, :inset=>:true}}
+    %li
+      = link_to "Create New Message", studentview_messages_path(:new=>true)
+- elsif @new
+  = form_for @message, :url=> studentview_messages_path do |f|
+    = f.label :recipient_id, "Recipient"
+    = f.select :recipient_id, options_for_select(@users.collect{|user| [user.email, user.id]})
+    = f.label :subject
+    = f.text_field :subject
+    = f.label :body
+    = f.text_area :body
+    = f.submit

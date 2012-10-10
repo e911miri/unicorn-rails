@@ -1,0 +1,23 @@
+%table.table.table-bordered
+  %caption
+    %h3 All Students in the System
+  %tr
+    %th Name
+    %th Matric no
+    %th Department
+    %th
+    %th
+    %th
+
+  - @students.each do |student|
+    %tr
+      %td= student.name
+      %td= student.matric_no
+      %td= student.department_id
+      %td= link_to 'Show', student
+      %td= link_to 'Edit', edit_student_path(student)
+      %td= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Student', new_student_path

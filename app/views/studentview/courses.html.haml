@@ -1,0 +1,28 @@
+- provide(:title, "Courses")
+- provide(:header, " Courses | Unicorn Student")
+- if @courses != nil
+  %ul{:data=>{:filter=>"true", :role=>:listview, :inset=>:true}}  
+    - @courses.each do |course|
+      %li= link_to event.name,studentview_courses_path(:id => course.id), :data=>{:ajax=>:false}
+- elsif @course != nil
+  %ul{:data=>{:filter=>"true", :role=>:listview, :inset=>:true}}
+    %li{:data=>{:role=>:divider}}
+      Course Details
+    %li
+      Course Code:
+      = @course.code
+    %li 
+      Department:
+      = @course.department.name
+    %li
+      Title:
+      = @course.title
+    %li
+      Summary:
+      = @course.summary
+    %li
+      Unit:
+      = @course.unit
+    %li
+      notes
+      = @course.notes

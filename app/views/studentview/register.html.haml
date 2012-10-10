@@ -1,0 +1,6 @@
+- provide(:title, "Registration")
+- provide(:header, "Register | Unicorn Student")
+- if user_signed_in?
+  = render "shared/registrations/edit"  
+- else
+  = render "shared/registrations/new"

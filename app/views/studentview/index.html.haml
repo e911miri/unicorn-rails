@@ -1,0 +1,20 @@
+- provide(:title, "Welcome")
+- provide(:header, " Home | Unicorn Student")
+- if current_user.student?
+  = render "studentview/menu"
+- else
+  %p It seems you are new to the system, Please update your profile with your matric number
+= form_for @micropost, :url=> studentview_path, :method=>:get do |f|
+  %div.field
+    = f.label :content, "What have you been Up to?"
+    = f.text_area :content
+  %div.actions
+    = f.submit
+%div{:data=>{:role=>:navbar}}
+  %ul
+    %li= link_to :Notifications, "#"
+- if @microposts
+  %ul{:data=>{:role=>:listview, :inset=>:true}}
+    - @microposts.each do |micropost|
+      %li
+        = link_to micropost.content, "#"

@@ -2,10 +2,10 @@
 	<ul class="nav nav-list"">
 		<% if admin_signed_in? %>
 		<li class="nav-header">Users Management</li>
-		<li><%= link_to "Manage Users", user_profiles_path %></li>
-		<li><%= link_to "Manage Administrators" %></li>
-		<li><%= link_to "Manage Students"  %></li>
-		<li><%= link_to "Manage Lecturers" %></li>
+		<li><%= link_to "Manage Users", admin_users_path %></li>
+		<li><%= link_to "Manage Administrators", admin_list_path %></li>
+		<li><%= link_to "Manage Students", students_path  %></li>
+		<li><%= link_to "Manage Lecturers", lecturers_path %></li>
 		<li class="nav-header">Academic Management</li>
 		<li><%= link_to "Manage Departments", departments_path %></li>
 		<li><%= link_to "Manage Lecture Shedules", lectureschedules_path %></li>
