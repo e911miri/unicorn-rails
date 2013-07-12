@@ -16,3 +16,7 @@
 *.class
 *.pyc
 *.pyo
+
+db/*.sqlite3
+log/*.log
+tmp/**/*
